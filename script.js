@@ -1,7 +1,7 @@
-let num = document.querySelector('input#fnum')
-let lista = document.querySelector('select#flista')
-let res = document.querySelector('div#res')
-let valores = []
+var num = document.querySelector('input#fnum')
+var lista = document.querySelector('select#flista')
+var res = document.querySelector('div#res')
+var valores = []
 
 // adição dos elementos. Recebe um número e uma lista, cada um com parâmetros distintos
 function isNumber(n) { // recebe um parâmetro
@@ -23,7 +23,7 @@ function inList(n, l) { // recebe dois parâmetros
 function adicionar() {
     if(isNumber(num.value) && !inList(num.value, valores)) { // só vai adicionar se for um número (isNumber) e só vai adicionar se estiver na lista (inList)
         valores.push(Number(num.value))
-        let item = document.createElement('option')
+        var item = document.createElement('option')
         item.text = `Valor ${num.value} adicionado.`
         lista.appendChild(item)
         res.innerHTML = ''
@@ -38,12 +38,12 @@ function finalizar() {
     if (valores.length == 0) {
         window.alert('Adicione valores antes de finalizar!')
     } else {
-        let tot = valores.length
-        let maior = valores[0]
-        let menor = valores[0]
-        let soma = 0
-        let media = 0
-        for(let pos in valores) {
+        var tot = valores.length
+        var maior = valores[0]
+        var menor = valores[0]
+        var soma = 0
+        var media = 0
+        for(var pos in valores) {
             soma += valores[pos]
             if (valores[pos] > maior)
             maior = valores[pos]
